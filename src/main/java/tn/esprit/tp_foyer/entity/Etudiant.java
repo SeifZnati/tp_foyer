@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.engine.internal.Cascade;
 
 import java.util.Date;
 import java.util.Set;
@@ -30,6 +29,6 @@ public class Etudiant {
 
     private Date dateNaissance;
 
-    @ManyToMany(mappedBy = "etudiants", cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "etudiants", cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     private Set<Reservation> reservations;
 }
