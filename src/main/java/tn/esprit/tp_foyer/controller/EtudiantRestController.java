@@ -20,7 +20,7 @@ public class EtudiantRestController {
     }
 
     @GetMapping("/retrieve-etudiant/{etudiant-id}")
-    public Etudiant retrieveEtudiant(Long etId) {
+    public Etudiant retrieveEtudiant(@PathVariable("etudiant-id") Long etId) {
         return etudiantService.retrieveEtudiant(etId);
     }
 
@@ -30,7 +30,7 @@ public class EtudiantRestController {
     }
 
     @DeleteMapping("/remove-etudiant/{etudiant-id}")
-    public void removeEtudiant(Long etId) {
+    public void removeEtudiant(@PathVariable("etudiant-id") Long etId) {
         etudiantService.removeEtudiant(etId);
     }
 

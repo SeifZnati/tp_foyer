@@ -2,7 +2,6 @@ package tn.esprit.tp_foyer.service;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import tn.esprit.tp_foyer.entity.Foyer;
 import tn.esprit.tp_foyer.entity.Reservation;
 import tn.esprit.tp_foyer.repository.ReservationRepository;
 
@@ -20,8 +19,8 @@ import java.util.List;
     }
 
     @Override
-    public Reservation retrieveReservation(long foyerId) {
-        return reservationRepository.findById(foyerId).get();
+    public Reservation retrieveReservation(long reservationId) {
+        return reservationRepository.findById(reservationId).orElse(null);
     }
 
     @Override

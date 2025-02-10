@@ -20,7 +20,7 @@ public class UniversiteRestController {
     }
 
     @GetMapping("/retrieve-universite/{universite-id}")
-    public Universite retrieveUniversite(Long uId) {
+    public Universite retrieveUniversite(@PathVariable("universite-id") Long uId) {
         return universiteService.retrieveUniversite(uId);
     }
 
@@ -30,7 +30,7 @@ public class UniversiteRestController {
     }
 
     @DeleteMapping("/remove-universite/{universite-id}")
-    public void removeUniversite(Long uId) {
+    public void removeUniversite(@PathVariable("universite-id") Long uId) {
         universiteService.removeUniversite(uId);
     }
 

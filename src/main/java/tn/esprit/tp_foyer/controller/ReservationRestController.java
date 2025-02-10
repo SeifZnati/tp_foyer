@@ -20,7 +20,7 @@ public class ReservationRestController {
     }
 
     @GetMapping("/retrieve-reservation/{reservation-id}")
-    public Reservation retrieveReservation(Long rId) {
+    public Reservation retrieveReservation(@PathVariable("reservation-id") Long rId ) {
         return reservationService.retrieveReservation(rId);
     }
 
@@ -30,7 +30,7 @@ public class ReservationRestController {
     }
 
     @DeleteMapping("/remove-reservation/{reservation-id}")
-    public void removeReservation(Long rId) {
+    public void removeReservation(@PathVariable("reservation-id") Long rId) {
         reservationService.removeReservation(rId);
     }
 
