@@ -9,7 +9,7 @@ import java.util.List;
 
 @Service
 @AllArgsConstructor
-public class BlocServiceImpl implements IBlocService{
+public class BlocServiceImpl implements IBlocService {
 
     BlocRepository blocRepository;
     @Override
