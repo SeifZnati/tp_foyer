@@ -38,4 +38,16 @@ public class BlocRestController {
     public Bloc modifyBloc(@RequestBody Bloc b) {
         return blocService.modifyBloc(b);
     }
+
+    @PutMapping("affecter-foyer-a-bloc/{foyer-id}/{bloc-id}")
+    public void affecterFoyerABloc(@PathVariable("foyer-id") Long fId,
+                                  @PathVariable("bloc-id") Long bId) {
+        blocService.assignFoyerToBloc(fId, bId);
+    }
+
+    @PutMapping("Desaffecter-foyer-a-bloc/{foyer-id}/{bloc-id}")
+    public void desaffecterFoyerABloc(@PathVariable("foyer-id") Long fId,
+                                  @PathVariable("bloc-id") Long bId) {
+        blocService.desassignFoyerToBloc(fId, bId);
+    }
 }

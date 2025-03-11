@@ -10,4 +10,6 @@ public interface IBlocService {
     Bloc addBloc(Bloc b);
     void removeBloc(long blocId);
     Bloc modifyBloc(Bloc bloc);
-}
+    void assignFoyerToBloc(Long foyerId, Long blocId);
+    void desassignFoyerToBloc(Long foyerId, Long blocId);
+    }

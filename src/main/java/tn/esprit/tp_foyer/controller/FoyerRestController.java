@@ -2,6 +2,7 @@ package tn.esprit.tp_foyer.controller;
 
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+import tn.esprit.tp_foyer.entity.Bloc;
 import tn.esprit.tp_foyer.entity.Foyer;
 import tn.esprit.tp_foyer.service.IFoyerService;
 
@@ -37,5 +38,11 @@ public class FoyerRestController {
     @PutMapping("/modify-foyer")
     public Foyer modifyFoyer(@RequestBody Foyer f) {
         return foyerService.modifyFoyer(f);
+    }
+
+    @PostMapping("/ajouter-bloc-et-foyer")
+    public Foyer addBlocAndFoyer(@RequestBody Foyer f) {
+        Foyer foyer = foyerService.addBlocAndFoyerAndAssign(f);
+        return foyer;
     }
 }
