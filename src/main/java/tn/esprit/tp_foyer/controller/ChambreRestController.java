@@ -5,6 +5,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.tp_foyer.entity.Chambre;
+import tn.esprit.tp_foyer.entity.TypeChambre;
 import tn.esprit.tp_foyer.service.IChambreService;
 
 import java.util.List;
@@ -41,5 +42,16 @@ public class ChambreRestController {
     @PutMapping("/modify-chambre")
     public Chambre modifyChambre(@RequestBody Chambre c) {
         return chambreService.modifyChambre(c);
+    }
+
+    @GetMapping("/retrieve-chambre-by-type/{type-chambre}")
+    public List<Chambre> retrieveChambreByType(@PathVariable("type-chambre")
+                                               TypeChambre typeChambre) {
+        return chambreService.trouverChambresByType(typeChambre);
+    }
+
+    @GetMapping("/retrieve-chambre-by-numero/{num}")
+    public Chambre retrieveChambreByNumero(@PathVariable("num") int num) {
+        return chambreService.trouverChambrebyNum(num);
     }
 }

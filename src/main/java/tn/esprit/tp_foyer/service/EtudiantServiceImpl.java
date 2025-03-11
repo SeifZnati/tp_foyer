@@ -1,6 +1,7 @@
 package tn.esprit.tp_foyer.service;
 
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tn.esprit.tp_foyer.entity.Etudiant;
 import tn.esprit.tp_foyer.repository.EtudiantRepository;
@@ -36,5 +37,11 @@ public class EtudiantServiceImpl implements IEtudiantService {
     @Override
     public Etudiant modifyEtudiant(Etudiant etudiant) {
         return etudiantRepository.save(etudiant);
+    }
+
+    @Override
+    public List<Etudiant> trouverEtudiantsByEcole(String ecole)
+    {
+      return etudiantRepository.findEtudiantsByEcole(ecole);
     }
 }

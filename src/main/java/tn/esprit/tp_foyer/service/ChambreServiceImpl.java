@@ -1,8 +1,10 @@
 package tn.esprit.tp_foyer.service;
 
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tn.esprit.tp_foyer.entity.Chambre;
+import tn.esprit.tp_foyer.entity.TypeChambre;
 import tn.esprit.tp_foyer.repository.ChambreRepository;
 
 import java.util.List;
@@ -35,5 +37,17 @@ public class ChambreServiceImpl implements IChambreService {
     @Override
     public Chambre modifyChambre(Chambre chambre) {
         return chambreRepository.save(chambre);
+    }
+
+    @Override
+    public List<Chambre> trouverChambresByType(TypeChambre tch)
+    {
+      return chambreRepository.findAllByTypeC(tch);
+    }
+
+    @Override
+    public Chambre trouverChambrebyNum(long num)
+    {
+      return chambreRepository.findChambreByNumeroChambre(num);
     }
 }

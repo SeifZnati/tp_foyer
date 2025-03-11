@@ -10,4 +10,5 @@ public interface IEtudiantService {
     Etudiant addEtudiant(Etudiant e);
     void removeEtudiant(long etudiantId);
     Etudiant modifyEtudiant(Etudiant etudiant);
+    List<Etudiant> trouverEtudiantsByEcole(String ecole);
 }

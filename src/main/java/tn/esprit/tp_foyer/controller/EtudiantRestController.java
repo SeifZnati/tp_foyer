@@ -39,5 +39,9 @@ public class EtudiantRestController {
         return etudiantService.modifyEtudiant(e);
     }
 
+    @GetMapping
+    public List<Etudiant> getEtudiantsByEcole(@RequestParam String ecole) {
+        return etudiantService.trouverEtudiantsByEcole(ecole);
+    }
 
 }
